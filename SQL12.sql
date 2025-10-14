@@ -1,0 +1,28 @@
+use sakila;
+show tables;
+select * from inventory;
+select * from customer order by customer_id desc limit 1 offset 1;
+select * from customer order by customer_id desc limit 3 offset 0;
+select distinct inventory_id from inventory where count(film_id) >= 10;
+
+select extract(month from now());
+select first_name,extract(month from create_date) from customer;
+select utc_date();
+select utc_time();
+select time(create_date) from customer;
+select date(create_date) from customer;
+select day(create_date) from customer;
+select month(create_date) from customer;
+select dayofyear(create_date) from customer;
+select dayname(create_date) from customer;
+select monthname(create_date) from customer;
+select year(create_date) from customer;
+select weekday(now()) from customer;
+select dayname(now());
+select now();
+select adddate(now(),interval 10 month);
+select adddate(now(),interval 2 year);
+select adddate(now(),interval 10 day);
+select adddate(now(),interval 10 hour);
+select subdate(now(),interval 4 month);
+select datediff(now(),'2006-02-23 22:04:24');
